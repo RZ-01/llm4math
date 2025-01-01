@@ -5,7 +5,6 @@ from custom_trainer import CustomSFTTrainer
 
 def build_training_args(args):
     return SFTConfig(
-        dataset_text_field="prompts",
         output_dir=args.output_dir,
         per_device_train_batch_size=args.per_device_train_batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
@@ -33,7 +32,6 @@ def create_trainer(model, training_args, train_dataset, val_dataset, tokenizer, 
         model=model,
         args=training_args,
         train_dataset=train_dataset,
-
         eval_dataset=val_dataset,
         tokenizer=tokenizer,
         peft_config=peft_config,

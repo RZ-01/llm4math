@@ -29,13 +29,42 @@ def load_train_val_datasets(dataset_dir, tokenizer, generate_prompt_fn):
 
     return verify_data, eval_data
 
+import json
+
+def rename_key(filepath, old_key="model_output", new_key="completion"):
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        if isinstance(data, list):  # 处理 JSON 数组
+            for item in data:
+                if old_key in item:
+                    item[new_key] = item.pop(old_key)
+        elif isinstance(data, dict):  # 处理 JSON 对象
+            if old_key in data:
+                data[new_key] = data.pop(old_key)
+
+        with open("~/Hera/LLM-for-Math/data/verification_results_MATH_Mistral_L_input.jsonl", 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=4)
+
+    except FileNotFoundError:
+        print(f"Error: File not found at {filepath}")
+    except json.JSONDecodeError:
+        print(f"Error: Invalid JSON format in {filepath}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+# 使用示例
+filepath = "~/Hera/LLM-for-Math/data/verification_results_MATH_Mistral_L_flattened.jsonl"  
+rename_key(filepath)
+
 """
     # Generation Dataset
     gsm8k_dataset = load_dataset("openai/gsm8k",'main', split="train")
     generate_data = gsm8k_dataset.map(lambda x: {"prompt": x["question"], "completion": x["answer"], "task_type": "generate"})
     eval_data = load_dataset("openai/gsm8k",'main', split="test")
     eval_data = eval_data.map(lambda x: {"prompt": x["question"], "completion": x["answer"], "task_type": "generate"})
-    """
+"""
     # Mix Verify dataset with Generate dataset
     #mixed_data = {
     #    "prompt": verify_dataset["prompt"] + generate_data["prompt"],
