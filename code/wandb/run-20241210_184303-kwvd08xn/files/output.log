@@ -1,0 +1,90 @@
+Loading checkpoint shards: 100%|██████████████████| 8/8 [00:15<00:00,  1.99s/it]
+INFO:__main__:Tokenizer max length: 1000000000000000019884624838656
+INFO:__main__:Loading datasets...
+INFO:__main__:Train dataset length: 7473
+INFO:__main__:Validation dataset length: 1319
+INFO:peft.tuners.tuners_utils:Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+Traceback (most recent call last):
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 82, in <module>
+    main(args)
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 47, in main
+    model, lora_config = prepare_lora_model(model, args.lora_r, args.lora_alpha, args.lora_dropout)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/model/lora_utils.py", line 29, in prepare_lora_model
+    model = get_peft_model(model, lora_config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/mapping.py", line 222, in get_peft_model
+    return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/peft_model.py", line 1684, in __init__
+    super().__init__(model, peft_config, adapter_name, **kwargs)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/peft_model.py", line 176, in __init__
+    self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/model.py", line 141, in __init__
+    super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
+    self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 501, in inject_adapter
+    self._create_and_replace(peft_config, adapter_name, target, target_name, parent, current_key=key)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/model.py", line 235, in _create_and_replace
+    new_module = self._create_new_module(lora_config, adapter_name, target, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/model.py", line 354, in _create_new_module
+    new_module = dispatcher(target, adapter_name, lora_config=lora_config, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/bnb.py", line 562, in dispatch_bnb_4bit
+    new_module = Linear4bit(target, adapter_name, **fourbit_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/bnb.py", line 322, in __init__
+    self.update_layer(
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/layer.py", line 152, in update_layer
+    self.reset_lora_parameters(adapter_name, init_lora_weights)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/layer.py", line 172, in reset_lora_parameters
+    nn.init.kaiming_uniform_(self.lora_A[adapter_name].weight, a=math.sqrt(5))
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/init.py", line 518, in kaiming_uniform_
+    return tensor.uniform_(-bound, bound, generator=generator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 82, in <module>
+[rank2]:     main(args)
+[rank2]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 47, in main
+[rank2]:     model, lora_config = prepare_lora_model(model, args.lora_r, args.lora_alpha, args.lora_dropout)
+[rank2]:                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/model/lora_utils.py", line 29, in prepare_lora_model
+[rank2]:     model = get_peft_model(model, lora_config)
+[rank2]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/mapping.py", line 222, in get_peft_model
+[rank2]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/peft_model.py", line 1684, in __init__
+[rank2]:     super().__init__(model, peft_config, adapter_name, **kwargs)
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/peft_model.py", line 176, in __init__
+[rank2]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
+[rank2]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/model.py", line 141, in __init__
+[rank2]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
+[rank2]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 501, in inject_adapter
+[rank2]:     self._create_and_replace(peft_config, adapter_name, target, target_name, parent, current_key=key)
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/model.py", line 235, in _create_and_replace
+[rank2]:     new_module = self._create_new_module(lora_config, adapter_name, target, **kwargs)
+[rank2]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/model.py", line 354, in _create_new_module
+[rank2]:     new_module = dispatcher(target, adapter_name, lora_config=lora_config, **kwargs)
+[rank2]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/bnb.py", line 562, in dispatch_bnb_4bit
+[rank2]:     new_module = Linear4bit(target, adapter_name, **fourbit_kwargs)
+[rank2]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/bnb.py", line 322, in __init__
+[rank2]:     self.update_layer(
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/layer.py", line 152, in update_layer
+[rank2]:     self.reset_lora_parameters(adapter_name, init_lora_weights)
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/layer.py", line 172, in reset_lora_parameters
+[rank2]:     nn.init.kaiming_uniform_(self.lora_A[adapter_name].weight, a=math.sqrt(5))
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/init.py", line 518, in kaiming_uniform_
+[rank2]:     return tensor.uniform_(-bound, bound, generator=generator)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: KeyboardInterrupt

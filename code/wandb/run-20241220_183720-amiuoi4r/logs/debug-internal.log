@@ -1,0 +1,16 @@
+{"time":"2024-12-20T18:37:20.92644297-08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-20T18:37:20.92646514-08:00","level":"INFO","msg":"created symlink","path":"/home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/run-20241220_183720-amiuoi4r/logs/debug-core.log"}
+{"time":"2024-12-20T18:37:21.03577321-08:00","level":"INFO","msg":"created new stream","id":"amiuoi4r"}
+{"time":"2024-12-20T18:37:21.035819739-08:00","level":"INFO","msg":"stream: started","id":"amiuoi4r"}
+{"time":"2024-12-20T18:37:21.035888329-08:00","level":"INFO","msg":"sender: started","stream_id":"amiuoi4r"}
+{"time":"2024-12-20T18:37:21.035882249-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"amiuoi4r"}
+{"time":"2024-12-20T18:37:21.035919038-08:00","level":"INFO","msg":"handler: started","stream_id":"amiuoi4r"}
+{"time":"2024-12-20T18:37:21.304203684-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-20T18:38:37.423152818-08:00","level":"INFO","msg":"stream: closing","id":"amiuoi4r"}
+{"time":"2024-12-20T18:38:37.423241617-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-20T18:38:37.424257853-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-20T18:38:37.926382756-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-20T18:38:38.092855634-08:00","level":"INFO","msg":"handler: closed","stream_id":"amiuoi4r"}
+{"time":"2024-12-20T18:38:38.092891504-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"amiuoi4r"}
+{"time":"2024-12-20T18:38:38.092919064-08:00","level":"INFO","msg":"sender: closed","stream_id":"amiuoi4r"}
+{"time":"2024-12-20T18:38:38.092965344-08:00","level":"INFO","msg":"stream: closed","id":"amiuoi4r"}

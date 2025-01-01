@@ -1,0 +1,12 @@
+{"time":"2024-12-21T04:01:18.571144201-08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-21T04:01:18.571168161-08:00","level":"INFO","msg":"created symlink","path":"/home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/run-20241221_040118-yjsmkei9/logs/debug-core.log"}
+{"time":"2024-12-21T04:01:18.679687177-08:00","level":"INFO","msg":"created new stream","id":"yjsmkei9"}
+{"time":"2024-12-21T04:01:18.679738737-08:00","level":"INFO","msg":"stream: started","id":"yjsmkei9"}
+{"time":"2024-12-21T04:01:18.679751677-08:00","level":"INFO","msg":"handler: started","stream_id":"yjsmkei9"}
+{"time":"2024-12-21T04:01:18.679792777-08:00","level":"INFO","msg":"sender: started","stream_id":"yjsmkei9"}
+{"time":"2024-12-21T04:01:18.679818267-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"yjsmkei9"}
+{"time":"2024-12-21T04:01:18.940946485-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-21T04:01:37.22080514-08:00","level":"INFO","msg":"stream: closing","id":"yjsmkei9"}
+{"time":"2024-12-21T04:01:37.22083229-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-21T04:01:37.221511532-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-21T04:01:37.703569649-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}

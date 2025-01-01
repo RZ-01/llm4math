@@ -1,0 +1,48 @@
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████| 8/8 [00:15<00:00,  1.98s/it]
+INFO:__main__:Tokenizer max length: 1000000000000000019884624838656
+INFO:__main__:Loading datasets...
+INFO:__main__:Train dataset length: 7473
+INFO:__main__:Validation dataset length: 1319
+INFO:peft.tuners.tuners_utils:Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+INFO:__main__:Trainable: 864288768 | total: 10105994752 | Percentage: 8.5522%
+/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py:100: FutureWarning: Deprecated argument(s) used in '__init__': dataset_text_field. Will not be supported from version '0.13.0'.
+
+Deprecated positional argument(s) used in SFTTrainer, please use the SFTConfig to set these arguments instead.
+  warnings.warn(message, FutureWarning)
+/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/trl/trainer/sft_trainer.py:328: UserWarning: You passed a `dataset_text_field` argument to the SFTTrainer, the value you passed will override the one in the `SFTConfig`.
+  warnings.warn(
+[2024-12-10 18:36:33,373] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -c /tmp/tmpsgwek0wz/test.c -o /tmp/tmpsgwek0wz/test.o
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat /tmp/tmpsgwek0wz/test.o -laio -o /tmp/tmpsgwek0wz/a.out
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -c /tmp/tmp_sx_1vp4/test.c -o /tmp/tmp_sx_1vp4/test.o
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat /tmp/tmp_sx_1vp4/test.o -L/usr/local/cuda -L/usr/local/cuda/lib64 -lcufile -o /tmp/tmp_sx_1vp4/a.out
+INFO:__main__:Starting training...
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+Traceback (most recent call last):
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 82, in <module>
+    main(args)
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 65, in main
+    trainer.train(resume_from_checkpoint=False)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2123, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2548, in _inner_training_loop
+    self._maybe_log_save_evaluate(tr_loss, grad_norm, model, trial, epoch, ignore_keys_for_eval)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2986, in _maybe_log_save_evaluate
+    tr_loss_scalar = self._nested_gather(tr_loss).mean().item()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 82, in <module>
+[rank2]:     main(args)
+[rank2]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 65, in main
+[rank2]:     trainer.train(resume_from_checkpoint=False)
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2123, in train
+[rank2]:     return inner_training_loop(
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2548, in _inner_training_loop
+[rank2]:     self._maybe_log_save_evaluate(tr_loss, grad_norm, model, trial, epoch, ignore_keys_for_eval)
+[rank2]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2986, in _maybe_log_save_evaluate
+[rank2]:     tr_loss_scalar = self._nested_gather(tr_loss).mean().item()
+[rank2]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: KeyboardInterrupt

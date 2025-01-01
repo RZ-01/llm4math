@@ -1,0 +1,15 @@
+INFO:__main__:Loading model from ./results/final_model
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████| 8/8 [00:00<00:00, 12.29it/s]
+INFO:__main__:Loading test data from ../../inference_results.jsonl
+INFO:__main__:Number of test samples: 1
+Inference:   0%|                                                                                               | 0/1 [00:04<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/infer.py", line 143, in <module>
+    main(args)
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/infer.py", line 113, in main
+    average_score, generated_texts = perform_inference(
+                                     ^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/infer.py", line 69, in perform_inference
+    yes_prob_normalized = yes_prob / total_prob
+                          ~~~~~~~~~^~~~~~~~~~~~
+ZeroDivisionError: float division by zero

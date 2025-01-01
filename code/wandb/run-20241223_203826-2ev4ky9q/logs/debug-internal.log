@@ -1,0 +1,8 @@
+{"time":"2024-12-23T20:38:26.984480006-08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-23T20:38:26.984493906-08:00","level":"INFO","msg":"created symlink","path":"/home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/run-20241223_203826-2ev4ky9q/logs/debug-core.log"}
+{"time":"2024-12-23T20:38:27.092052022-08:00","level":"INFO","msg":"created new stream","id":"2ev4ky9q"}
+{"time":"2024-12-23T20:38:27.092087952-08:00","level":"INFO","msg":"stream: started","id":"2ev4ky9q"}
+{"time":"2024-12-23T20:38:27.092117683-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"2ev4ky9q"}
+{"time":"2024-12-23T20:38:27.092119783-08:00","level":"INFO","msg":"sender: started","stream_id":"2ev4ky9q"}
+{"time":"2024-12-23T20:38:27.092190793-08:00","level":"INFO","msg":"handler: started","stream_id":"2ev4ky9q"}
+{"time":"2024-12-23T20:38:27.357028996-08:00","level":"INFO","msg":"Starting system monitor"}

@@ -1,0 +1,21 @@
+Loading checkpoint shards: 100%|██████████████████| 8/8 [00:15<00:00,  1.97s/it]
+INFO:__main__:Tokenizer max length: 1000000000000000019884624838656
+INFO:__main__:Loading datasets...
+INFO:__main__:Train dataset length: 7473
+INFO:__main__:Validation dataset length: 1319
+INFO:__main__:Trainable: 432144384 | total: 9673850368 | Percentage: 4.4671%
+/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py:100: FutureWarning: Deprecated argument(s) used in '__init__': dataset_text_field. Will not be supported from version '0.13.0'.
+
+Deprecated positional argument(s) used in SFTTrainer, please use the SFTConfig to set these arguments instead.
+  warnings.warn(message, FutureWarning)
+/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/trl/trainer/sft_trainer.py:328: UserWarning: You passed a `dataset_text_field` argument to the SFTTrainer, the value you passed will override the one in the `SFTConfig`.
+  warnings.warn(
+[2024-12-10 03:59:50,845] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -c /tmp/tmpgdoo2olq/test.c -o /tmp/tmpgdoo2olq/test.o
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat /tmp/tmpgdoo2olq/test.o -laio -o /tmp/tmpgdoo2olq/a.out
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -c /tmp/tmpta6k8wtz/test.c -o /tmp/tmpta6k8wtz/test.o
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat /tmp/tmpta6k8wtz/test.o -L/usr/local/cuda -L/usr/local/cuda/lib64 -lcufile -o /tmp/tmpta6k8wtz/a.out
+INFO:__main__:Starting training...
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+INFO:__main__:Model saved to ./results/final_model
+INFO:__main__:Evaluation results: {'eval_loss': 1.3671666383743286, 'eval_runtime': 175.219, 'eval_samples_per_second': 7.528, 'eval_steps_per_second': 0.24, 'epoch': 2.990374331550802}

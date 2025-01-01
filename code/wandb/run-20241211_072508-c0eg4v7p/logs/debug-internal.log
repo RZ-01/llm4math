@@ -1,0 +1,16 @@
+{"time":"2024-12-11T07:25:08.389794733-08:00","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2024-12-11T07:25:08.389813384-08:00","level":"INFO","msg":"created symlink","path":"/home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/run-20241211_072508-c0eg4v7p/logs/debug-core.log"}
+{"time":"2024-12-11T07:25:08.498559158-08:00","level":"INFO","msg":"created new stream","id":"c0eg4v7p"}
+{"time":"2024-12-11T07:25:08.49861974-08:00","level":"INFO","msg":"stream: started","id":"c0eg4v7p"}
+{"time":"2024-12-11T07:25:08.49862443-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"c0eg4v7p"}
+{"time":"2024-12-11T07:25:08.49862917-08:00","level":"INFO","msg":"sender: started","stream_id":"c0eg4v7p"}
+{"time":"2024-12-11T07:25:08.498683872-08:00","level":"INFO","msg":"handler: started","stream_id":"c0eg4v7p"}
+{"time":"2024-12-11T07:25:08.812521518-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-11T07:26:47.93921126-08:00","level":"INFO","msg":"stream: closing","id":"c0eg4v7p"}
+{"time":"2024-12-11T07:26:47.93923574-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-11T07:26:47.939824171-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-11T07:26:48.424905248-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-11T07:26:48.596195905-08:00","level":"INFO","msg":"handler: closed","stream_id":"c0eg4v7p"}
+{"time":"2024-12-11T07:26:48.596235376-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"c0eg4v7p"}
+{"time":"2024-12-11T07:26:48.596269087-08:00","level":"INFO","msg":"sender: closed","stream_id":"c0eg4v7p"}
+{"time":"2024-12-11T07:26:48.59632873-08:00","level":"INFO","msg":"stream: closed","id":"c0eg4v7p"}

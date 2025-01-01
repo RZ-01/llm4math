@@ -1,0 +1,16 @@
+{"time":"2024-12-10T18:48:19.786698875-08:00","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2024-12-10T18:48:19.786718365-08:00","level":"INFO","msg":"created symlink","path":"/home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/run-20241210_184819-zxguntyp/logs/debug-core.log"}
+{"time":"2024-12-10T18:48:19.894081473-08:00","level":"INFO","msg":"created new stream","id":"zxguntyp"}
+{"time":"2024-12-10T18:48:19.894105634-08:00","level":"INFO","msg":"stream: started","id":"zxguntyp"}
+{"time":"2024-12-10T18:48:19.894155215-08:00","level":"INFO","msg":"handler: started","stream_id":"zxguntyp"}
+{"time":"2024-12-10T18:48:19.894157585-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"zxguntyp"}
+{"time":"2024-12-10T18:48:19.894170805-08:00","level":"INFO","msg":"sender: started","stream_id":"zxguntyp"}
+{"time":"2024-12-10T18:48:20.160346442-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-10T19:22:56.854508082-08:00","level":"INFO","msg":"stream: closing","id":"zxguntyp"}
+{"time":"2024-12-10T19:22:56.854553982-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-10T19:22:56.855094432-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-10T19:22:57.381508481-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-10T19:22:57.550690612-08:00","level":"INFO","msg":"handler: closed","stream_id":"zxguntyp"}
+{"time":"2024-12-10T19:22:57.550747232-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"zxguntyp"}
+{"time":"2024-12-10T19:22:57.550759112-08:00","level":"INFO","msg":"sender: closed","stream_id":"zxguntyp"}
+{"time":"2024-12-10T19:22:57.550815762-08:00","level":"INFO","msg":"stream: closed","id":"zxguntyp"}

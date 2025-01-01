@@ -1,0 +1,66 @@
+{
+  "os": "Linux-6.8.0-49-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.12.7",
+  "startedAt": "2024-12-10T11:59:15.255340Z",
+  "args": [
+    "train",
+    "--dataset_dir",
+    "/media/hdd/llm4math/extracted/extracted"
+  ],
+  "program": "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py",
+  "codePath": "Direct Verifier/code/train.py",
+  "git": {
+    "remote": "git@github.com:lorn666/LLM-for-Math.git",
+    "commit": "b7bc7adfbc02a790b900b2d7b93e03a97049d5ed"
+  },
+  "email": "sg151921942@gmail.com",
+  "root": "/home/llm4math/LLM-for-Math/Direct Verifier/code",
+  "host": "hera",
+  "username": "llm4math",
+  "executable": "/home/llm4math/miniconda3/envs/mathllm/bin/python",
+  "codePathLocal": "train.py",
+  "cpu_count": 32,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA RTX A6000",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "2014574526464",
+      "used": "988263686144"
+    }
+  },
+  "memory": {
+    "total": "134891880448"
+  },
+  "cpu": {
+    "count": 32,
+    "countLogical": 64
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere"
+    }
+  ],
+  "cudaVersion": "12.6"
+}

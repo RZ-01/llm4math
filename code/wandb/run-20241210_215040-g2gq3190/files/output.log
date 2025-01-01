@@ -1,0 +1,56 @@
+INFO:__main__:Loading model from ./results/final_model
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████| 8/8 [00:00<00:00, 12.24it/s]
+INFO:__main__:Loading test data from ../../inference_results.jsonl
+INFO:__main__:Number of test samples: 1
+Inference:   0%|                                                                                               | 0/1 [00:00<?, ?it/s]/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/generation/utils.py:2097: UserWarning: You are calling .generate() with the `input_ids` being on a device type different than your model's device. `input_ids` is on cpu, whereas the model is on cuda. You may experience unexpected behaviors or slower generation. Please make sure that you have put `input_ids` to the correct device by calling for example input_ids = input_ids.to('cuda') before running `.generate()`.
+  warnings.warn(
+Inference:   0%|                                                                                               | 0/1 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/infer.py", line 140, in <module>
+    main(args)
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/infer.py", line 110, in main
+    average_score, generated_texts = perform_inference(
+                                     ^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/infer.py", line 28, in perform_inference
+    outputs = model.generate(
+              ^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/generation/utils.py", line 2215, in generate
+    result = self._sample(
+             ^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/generation/utils.py", line 3206, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 1049, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 783, in forward
+    inputs_embeds = self.embed_tokens(input_ids)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/sparse.py", line 190, in forward
+    return F.embedding(
+           ^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/functional.py", line 2551, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument index in method wrapper_CUDA__index_select)

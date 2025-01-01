@@ -1,0 +1,49 @@
+_wandb:
+    value:
+        cli_version: 0.19.0
+        m: []
+        python_version: 3.12.7
+        t:
+            "1":
+                - 1
+                - 11
+                - 49
+                - 55
+                - 71
+            "2":
+                - 1
+                - 11
+                - 49
+                - 55
+                - 71
+                - 98
+            "3":
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.12.7
+            "5": 0.19.0
+            "6": 4.46.3
+            "8":
+                - 5
+            "12": 0.19.0
+            "13": linux-x86_64
+batch_size:
+    value: 8
+mode:
+    value: inference
+model_id:
+    value: google/gemma-2-9b
+model_path:
+    value: ./results/final_model
+num_votes:
+    value: 10
+output_path:
+    value: ./inference_results.jsonl
+project_name:
+    value: gemma_inference_project
+run_name:
+    value: gemma_inference_run
+test_data_path:
+    value: ../../inference_results.jsonl

@@ -1,0 +1,16 @@
+{"time":"2024-12-21T03:34:37.219866427-08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-21T03:34:37.219883428-08:00","level":"INFO","msg":"created symlink","path":"/home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/run-20241221_033437-pf78gc1j/logs/debug-core.log"}
+{"time":"2024-12-21T03:34:37.327915649-08:00","level":"INFO","msg":"created new stream","id":"pf78gc1j"}
+{"time":"2024-12-21T03:34:37.327982501-08:00","level":"INFO","msg":"stream: started","id":"pf78gc1j"}
+{"time":"2024-12-21T03:34:37.328009561-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"pf78gc1j"}
+{"time":"2024-12-21T03:34:37.328079383-08:00","level":"INFO","msg":"sender: started","stream_id":"pf78gc1j"}
+{"time":"2024-12-21T03:34:37.328019911-08:00","level":"INFO","msg":"handler: started","stream_id":"pf78gc1j"}
+{"time":"2024-12-21T03:34:37.571456981-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-21T03:34:55.866860611-08:00","level":"INFO","msg":"stream: closing","id":"pf78gc1j"}
+{"time":"2024-12-21T03:34:55.866895301-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-21T03:34:55.867510663-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-21T03:34:56.330574316-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-21T03:34:56.497730547-08:00","level":"INFO","msg":"handler: closed","stream_id":"pf78gc1j"}
+{"time":"2024-12-21T03:34:56.497765708-08:00","level":"INFO","msg":"sender: closed","stream_id":"pf78gc1j"}
+{"time":"2024-12-21T03:34:56.497763888-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"pf78gc1j"}
+{"time":"2024-12-21T03:34:56.49787494-08:00","level":"INFO","msg":"stream: closed","id":"pf78gc1j"}

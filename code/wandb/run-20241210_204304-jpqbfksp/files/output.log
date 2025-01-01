@@ -1,0 +1,352 @@
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████| 8/8 [00:07<00:00,  1.01it/s]
+INFO:__main__:Tokenizer max length: 1000000000000000019884624838656
+INFO:__main__:Loading datasets...
+INFO:__main__:Train dataset length: 7473
+INFO:__main__:Validation dataset length: 1319
+/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py:100: FutureWarning: Deprecated argument(s) used in '__init__': dataset_text_field. Will not be supported from version '0.13.0'.
+
+Deprecated positional argument(s) used in SFTTrainer, please use the SFTConfig to set these arguments instead.
+  warnings.warn(message, FutureWarning)
+/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/trl/trainer/sft_trainer.py:328: UserWarning: You passed a `dataset_text_field` argument to the SFTTrainer, the value you passed will override the one in the `SFTConfig`.
+  warnings.warn(
+[2024-12-10 20:43:32,637] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -c /tmp/tmpfhxus8_r/test.c -o /tmp/tmpfhxus8_r/test.o
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat /tmp/tmpfhxus8_r/test.o -laio -o /tmp/tmpfhxus8_r/a.out
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -c /tmp/tmpbhpfwuil/test.c -o /tmp/tmpbhpfwuil/test.o
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat /tmp/tmpbhpfwuil/test.o -L/usr/local/cuda -L/usr/local/cuda/lib64 -lcufile -o /tmp/tmpbhpfwuil/a.out
+INFO:__main__:Starting training...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+  0%|                                                                                                        | 0/699 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+                                                                                                                                     
+{'loss': 0.3122, 'grad_norm': 0.0, 'learning_rate': 2e-09, 'epoch': 0.0}
+{'loss': 0.3096, 'grad_norm': 0.0, 'learning_rate': 4e-09, 'epoch': 0.01}
+{'loss': 0.2963, 'grad_norm': 0.0, 'learning_rate': 6e-09, 'epoch': 0.01}
+{'loss': 0.2883, 'grad_norm': 0.0, 'learning_rate': 8e-09, 'epoch': 0.02}
+{'loss': 0.3217, 'grad_norm': 0.0, 'learning_rate': 1e-08, 'epoch': 0.02}
+{'loss': 0.3324, 'grad_norm': 0.0, 'learning_rate': 1.2e-08, 'epoch': 0.03}
+{'loss': 0.3127, 'grad_norm': 0.0, 'learning_rate': 1.4e-08, 'epoch': 0.03}
+{'loss': 0.3321, 'grad_norm': 0.0, 'learning_rate': 1.6e-08, 'epoch': 0.03}
+{'loss': 0.3148, 'grad_norm': 0.0, 'learning_rate': 1.8e-08, 'epoch': 0.04}
+{'loss': 0.3196, 'grad_norm': 0.0, 'learning_rate': 2e-08, 'epoch': 0.04}
+{'loss': 0.304, 'grad_norm': 0.0, 'learning_rate': 2.2e-08, 'epoch': 0.05}
+{'loss': 0.3166, 'grad_norm': 0.0, 'learning_rate': 2.4e-08, 'epoch': 0.05}
+{'loss': 0.3082, 'grad_norm': 0.0, 'learning_rate': 2.5999999999999998e-08, 'epoch': 0.06}
+{'loss': 0.3013, 'grad_norm': 0.0, 'learning_rate': 2.8e-08, 'epoch': 0.06}
+{'loss': 0.3102, 'grad_norm': 0.0, 'learning_rate': 3e-08, 'epoch': 0.06}
+{'loss': 0.2951, 'grad_norm': 0.0, 'learning_rate': 3.2e-08, 'epoch': 0.07}
+{'loss': 0.3148, 'grad_norm': 0.0, 'learning_rate': 3.4e-08, 'epoch': 0.07}
+{'loss': 0.3084, 'grad_norm': 0.0, 'learning_rate': 3.6e-08, 'epoch': 0.08}
+{'loss': 0.3148, 'grad_norm': 0.0, 'learning_rate': 3.7999999999999996e-08, 'epoch': 0.08}
+{'loss': 0.3134, 'grad_norm': 0.0, 'learning_rate': 4e-08, 'epoch': 0.09}
+{'loss': 0.3152, 'grad_norm': 0.0, 'learning_rate': 4.2e-08, 'epoch': 0.09}
+{'loss': 0.3154, 'grad_norm': 0.0, 'learning_rate': 4.4e-08, 'epoch': 0.09}
+{'loss': 0.3131, 'grad_norm': 0.0, 'learning_rate': 4.5999999999999995e-08, 'epoch': 0.1}
+{'loss': 0.2944, 'grad_norm': 0.0, 'learning_rate': 4.8e-08, 'epoch': 0.1}
+{'loss': 0.3181, 'grad_norm': 0.0, 'learning_rate': 5e-08, 'epoch': 0.11}
+{'loss': 0.3079, 'grad_norm': 0.0, 'learning_rate': 5.1999999999999996e-08, 'epoch': 0.11}
+{'loss': 0.3164, 'grad_norm': 0.0, 'learning_rate': 5.3999999999999994e-08, 'epoch': 0.12}
+{'loss': 0.3037, 'grad_norm': 0.0, 'learning_rate': 5.6e-08, 'epoch': 0.12}
+{'loss': 0.3026, 'grad_norm': 0.0, 'learning_rate': 5.8e-08, 'epoch': 0.12}
+{'loss': 0.3106, 'grad_norm': 0.0, 'learning_rate': 6e-08, 'epoch': 0.13}
+{'loss': 0.2966, 'grad_norm': 0.0, 'learning_rate': 6.2e-08, 'epoch': 0.13}
+{'loss': 0.3115, 'grad_norm': 0.0, 'learning_rate': 6.4e-08, 'epoch': 0.14}
+{'loss': 0.3043, 'grad_norm': 0.0, 'learning_rate': 6.6e-08, 'epoch': 0.14}
+{'loss': 0.304, 'grad_norm': 0.0, 'learning_rate': 6.8e-08, 'epoch': 0.15}
+{'loss': 0.334, 'grad_norm': 0.0, 'learning_rate': 7e-08, 'epoch': 0.15}
+{'loss': 0.3156, 'grad_norm': 0.0, 'learning_rate': 7.2e-08, 'epoch': 0.15}
+{'loss': 0.3141, 'grad_norm': 0.0, 'learning_rate': 7.399999999999999e-08, 'epoch': 0.16}
+{'loss': 0.2987, 'grad_norm': 0.0, 'learning_rate': 7.599999999999999e-08, 'epoch': 0.16}
+{'loss': 0.2941, 'grad_norm': 0.0, 'learning_rate': 7.8e-08, 'epoch': 0.17}
+{'loss': 0.3153, 'grad_norm': 0.0, 'learning_rate': 8e-08, 'epoch': 0.17}
+{'loss': 0.3139, 'grad_norm': 0.0, 'learning_rate': 8.2e-08, 'epoch': 0.18}
+{'loss': 0.3181, 'grad_norm': 0.0, 'learning_rate': 8.4e-08, 'epoch': 0.18}
+{'loss': 0.3114, 'grad_norm': 0.0, 'learning_rate': 8.599999999999999e-08, 'epoch': 0.18}
+{'loss': 0.3134, 'grad_norm': 0.0, 'learning_rate': 8.8e-08, 'epoch': 0.19}
+{'loss': 0.2986, 'grad_norm': 0.0, 'learning_rate': 9e-08, 'epoch': 0.19}
+{'loss': 0.3158, 'grad_norm': 0.0, 'learning_rate': 9.199999999999999e-08, 'epoch': 0.2}
+{'loss': 0.3072, 'grad_norm': 0.0, 'learning_rate': 9.4e-08, 'epoch': 0.2}
+{'loss': 0.3104, 'grad_norm': 0.0, 'learning_rate': 9.6e-08, 'epoch': 0.21}
+{'loss': 0.3074, 'grad_norm': 0.0, 'learning_rate': 9.8e-08, 'epoch': 0.21}
+{'loss': 0.3026, 'grad_norm': 0.0, 'learning_rate': 1e-07, 'epoch': 0.21}
+{'loss': 0.3172, 'grad_norm': 0.0, 'learning_rate': 1.0199999999999999e-07, 'epoch': 0.22}
+{'loss': 0.3124, 'grad_norm': 0.0, 'learning_rate': 1.0399999999999999e-07, 'epoch': 0.22}
+{'loss': 0.309, 'grad_norm': 0.0, 'learning_rate': 1.06e-07, 'epoch': 0.23}
+{'loss': 0.3042, 'grad_norm': 0.0, 'learning_rate': 1.0799999999999999e-07, 'epoch': 0.23}
+{'loss': 0.3091, 'grad_norm': 0.0, 'learning_rate': 1.0999999999999999e-07, 'epoch': 0.24}
+{'loss': 0.3056, 'grad_norm': 0.0, 'learning_rate': 1.12e-07, 'epoch': 0.24}
+{'loss': 0.316, 'grad_norm': 0.0, 'learning_rate': 1.14e-07, 'epoch': 0.24}
+{'loss': 0.3135, 'grad_norm': 0.0, 'learning_rate': 1.16e-07, 'epoch': 0.25}
+{'loss': 0.2997, 'grad_norm': 0.0, 'learning_rate': 1.1799999999999998e-07, 'epoch': 0.25}
+{'loss': 0.3198, 'grad_norm': 0.0, 'learning_rate': 1.2e-07, 'epoch': 0.26}
+{'loss': 0.3005, 'grad_norm': 0.0, 'learning_rate': 1.2199999999999998e-07, 'epoch': 0.26}
+{'loss': 0.2939, 'grad_norm': 0.0, 'learning_rate': 1.24e-07, 'epoch': 0.27}
+{'loss': 0.3173, 'grad_norm': 0.0, 'learning_rate': 1.26e-07, 'epoch': 0.27}
+{'loss': 0.3125, 'grad_norm': 0.0, 'learning_rate': 1.28e-07, 'epoch': 0.27}
+{'loss': 0.2961, 'grad_norm': 0.0, 'learning_rate': 1.3e-07, 'epoch': 0.28}
+{'loss': 0.3123, 'grad_norm': 0.0, 'learning_rate': 1.32e-07, 'epoch': 0.28}
+{'loss': 0.3147, 'grad_norm': 0.0, 'learning_rate': 1.34e-07, 'epoch': 0.29}
+{'loss': 0.2845, 'grad_norm': 0.0, 'learning_rate': 1.36e-07, 'epoch': 0.29}
+{'loss': 0.3163, 'grad_norm': 0.0, 'learning_rate': 1.3800000000000002e-07, 'epoch': 0.3}
+{'loss': 0.2965, 'grad_norm': 0.0, 'learning_rate': 1.4e-07, 'epoch': 0.3}
+{'loss': 0.3257, 'grad_norm': 0.0, 'learning_rate': 1.4199999999999997e-07, 'epoch': 0.3}
+{'loss': 0.3157, 'grad_norm': 0.0, 'learning_rate': 1.44e-07, 'epoch': 0.31}
+{'loss': 0.3169, 'grad_norm': 0.0, 'learning_rate': 1.4599999999999998e-07, 'epoch': 0.31}
+{'loss': 0.3165, 'grad_norm': 0.0, 'learning_rate': 1.4799999999999998e-07, 'epoch': 0.32}
+{'loss': 0.3038, 'grad_norm': 0.0, 'learning_rate': 1.5e-07, 'epoch': 0.32}
+{'loss': 0.2988, 'grad_norm': 0.0, 'learning_rate': 1.5199999999999998e-07, 'epoch': 0.33}
+{'loss': 0.3084, 'grad_norm': 0.0, 'learning_rate': 1.54e-07, 'epoch': 0.33}
+{'loss': 0.3213, 'grad_norm': 0.0, 'learning_rate': 1.56e-07, 'epoch': 0.33}
+{'loss': 0.2996, 'grad_norm': 0.0, 'learning_rate': 1.5799999999999999e-07, 'epoch': 0.34}
+{'loss': 0.2981, 'grad_norm': 0.0, 'learning_rate': 1.6e-07, 'epoch': 0.34}
+{'loss': 0.3058, 'grad_norm': 0.0, 'learning_rate': 1.62e-07, 'epoch': 0.35}
+{'loss': 0.3057, 'grad_norm': 0.0, 'learning_rate': 1.64e-07, 'epoch': 0.35}
+{'loss': 0.3085, 'grad_norm': 0.0, 'learning_rate': 1.66e-07, 'epoch': 0.36}
+{'loss': 0.296, 'grad_norm': 0.0, 'learning_rate': 1.68e-07, 'epoch': 0.36}
+{'loss': 0.3075, 'grad_norm': 0.0, 'learning_rate': 1.7000000000000001e-07, 'epoch': 0.36}
+{'loss': 0.3158, 'grad_norm': 0.0, 'learning_rate': 1.7199999999999998e-07, 'epoch': 0.37}
+{'loss': 0.2964, 'grad_norm': 0.0, 'learning_rate': 1.7399999999999997e-07, 'epoch': 0.37}
+{'loss': 0.3213, 'grad_norm': 0.0, 'learning_rate': 1.76e-07, 'epoch': 0.38}
+{'loss': 0.3061, 'grad_norm': 0.0, 'learning_rate': 1.7799999999999998e-07, 'epoch': 0.38}
+{'loss': 0.3007, 'grad_norm': 0.0, 'learning_rate': 1.8e-07, 'epoch': 0.39}
+{'loss': 0.304, 'grad_norm': 0.0, 'learning_rate': 1.82e-07, 'epoch': 0.39}
+{'loss': 0.3025, 'grad_norm': 0.0, 'learning_rate': 1.8399999999999998e-07, 'epoch': 0.39}
+{'loss': 0.3023, 'grad_norm': 0.0, 'learning_rate': 1.86e-07, 'epoch': 0.4}
+{'loss': 0.3002, 'grad_norm': 0.0, 'learning_rate': 1.88e-07, 'epoch': 0.4}
+{'loss': 0.3109, 'grad_norm': 0.0, 'learning_rate': 1.8999999999999998e-07, 'epoch': 0.41}
+{'loss': 0.3009, 'grad_norm': 0.0, 'learning_rate': 1.92e-07, 'epoch': 0.41}
+{'loss': 0.3143, 'grad_norm': 0.0, 'learning_rate': 1.94e-07, 'epoch': 0.42}
+{'loss': 0.3066, 'grad_norm': 0.0, 'learning_rate': 1.96e-07, 'epoch': 0.42}
+{'loss': 0.3222, 'grad_norm': 0.0, 'learning_rate': 1.98e-07, 'epoch': 0.42}
+{'loss': 0.3151, 'grad_norm': 0.0, 'learning_rate': 2e-07, 'epoch': 0.43}
+{'loss': 0.3177, 'grad_norm': 0.0, 'learning_rate': 2.02e-07, 'epoch': 0.43}
+{'loss': 0.3078, 'grad_norm': 0.0, 'learning_rate': 2.0399999999999997e-07, 'epoch': 0.44}
+{'loss': 0.2913, 'grad_norm': 0.0, 'learning_rate': 2.06e-07, 'epoch': 0.44}
+{'loss': 0.3042, 'grad_norm': 0.0, 'learning_rate': 2.0799999999999998e-07, 'epoch': 0.45}
+{'loss': 0.3043, 'grad_norm': 0.0, 'learning_rate': 2.0999999999999997e-07, 'epoch': 0.45}
+{'loss': 0.2927, 'grad_norm': 0.0, 'learning_rate': 2.12e-07, 'epoch': 0.45}
+{'loss': 0.3309, 'grad_norm': 0.0, 'learning_rate': 2.1399999999999998e-07, 'epoch': 0.46}
+{'loss': 0.3209, 'grad_norm': 0.0, 'learning_rate': 2.1599999999999998e-07, 'epoch': 0.46}
+{'loss': 0.2995, 'grad_norm': 0.0, 'learning_rate': 2.18e-07, 'epoch': 0.47}
+{'loss': 0.3192, 'grad_norm': 0.0, 'learning_rate': 2.1999999999999998e-07, 'epoch': 0.47}
+{'loss': 0.3259, 'grad_norm': 0.0, 'learning_rate': 2.22e-07, 'epoch': 0.48}
+{'loss': 0.2897, 'grad_norm': 0.0, 'learning_rate': 2.24e-07, 'epoch': 0.48}
+{'loss': 0.3022, 'grad_norm': 0.0, 'learning_rate': 2.2599999999999999e-07, 'epoch': 0.48}
+{'loss': 0.3021, 'grad_norm': 0.0, 'learning_rate': 2.28e-07, 'epoch': 0.49}
+{'loss': 0.3047, 'grad_norm': 0.0, 'learning_rate': 2.3e-07, 'epoch': 0.49}
+{'loss': 0.2985, 'grad_norm': 0.0, 'learning_rate': 2.32e-07, 'epoch': 0.5}
+{'loss': 0.3027, 'grad_norm': 0.0, 'learning_rate': 2.34e-07, 'epoch': 0.5}
+{'loss': 0.3206, 'grad_norm': 0.0, 'learning_rate': 2.3599999999999997e-07, 'epoch': 0.51}
+{'loss': 0.3101, 'grad_norm': 0.0, 'learning_rate': 2.38e-07, 'epoch': 0.51}
+{'loss': 0.3059, 'grad_norm': 0.0, 'learning_rate': 2.4e-07, 'epoch': 0.51}
+{'loss': 0.3058, 'grad_norm': 0.0, 'learning_rate': 2.4199999999999997e-07, 'epoch': 0.52}
+{'loss': 0.3131, 'grad_norm': 0.0, 'learning_rate': 2.4399999999999996e-07, 'epoch': 0.52}
+{'loss': 0.2846, 'grad_norm': 0.0, 'learning_rate': 2.46e-07, 'epoch': 0.53}
+{'loss': 0.3448, 'grad_norm': 0.0, 'learning_rate': 2.48e-07, 'epoch': 0.53}
+{'loss': 0.3047, 'grad_norm': 0.0, 'learning_rate': 2.5e-07, 'epoch': 0.54}
+{'loss': 0.3185, 'grad_norm': 0.0, 'learning_rate': 2.52e-07, 'epoch': 0.54}
+{'loss': 0.3149, 'grad_norm': 0.0, 'learning_rate': 2.5399999999999997e-07, 'epoch': 0.54}
+{'loss': 0.29, 'grad_norm': 0.0, 'learning_rate': 2.56e-07, 'epoch': 0.55}
+{'loss': 0.2899, 'grad_norm': 0.0, 'learning_rate': 2.58e-07, 'epoch': 0.55}
+{'loss': 0.312, 'grad_norm': 0.0, 'learning_rate': 2.6e-07, 'epoch': 0.56}
+{'loss': 0.325, 'grad_norm': 0.0, 'learning_rate': 2.62e-07, 'epoch': 0.56}
+{'loss': 0.2969, 'grad_norm': 0.0, 'learning_rate': 2.64e-07, 'epoch': 0.57}
+{'loss': 0.3031, 'grad_norm': 0.0, 'learning_rate': 2.66e-07, 'epoch': 0.57}
+{'loss': 0.3155, 'grad_norm': 0.0, 'learning_rate': 2.68e-07, 'epoch': 0.57}
+{'loss': 0.3188, 'grad_norm': 0.0, 'learning_rate': 2.7e-07, 'epoch': 0.58}
+{'loss': 0.2877, 'grad_norm': 0.0, 'learning_rate': 2.72e-07, 'epoch': 0.58}
+{'loss': 0.3167, 'grad_norm': 0.0, 'learning_rate': 2.74e-07, 'epoch': 0.59}
+{'loss': 0.3285, 'grad_norm': 0.0, 'learning_rate': 2.7600000000000004e-07, 'epoch': 0.59}
+{'loss': 0.3312, 'grad_norm': 0.0, 'learning_rate': 2.7800000000000003e-07, 'epoch': 0.59}
+{'loss': 0.298, 'grad_norm': 0.0, 'learning_rate': 2.8e-07, 'epoch': 0.6}
+{'loss': 0.3005, 'grad_norm': 0.0, 'learning_rate': 2.8199999999999996e-07, 'epoch': 0.6}
+{'loss': 0.309, 'grad_norm': 0.0, 'learning_rate': 2.8399999999999995e-07, 'epoch': 0.61}
+{'loss': 0.3219, 'grad_norm': 0.0, 'learning_rate': 2.8599999999999994e-07, 'epoch': 0.61}
+{'loss': 0.3054, 'grad_norm': 0.0, 'learning_rate': 2.88e-07, 'epoch': 0.62}
+{'loss': 0.3027, 'grad_norm': 0.0, 'learning_rate': 2.9e-07, 'epoch': 0.62}
+{'loss': 0.3153, 'grad_norm': 0.0, 'learning_rate': 2.9199999999999997e-07, 'epoch': 0.62}
+{'loss': 0.2847, 'grad_norm': 0.0, 'learning_rate': 2.9399999999999996e-07, 'epoch': 0.63}
+{'loss': 0.3042, 'grad_norm': 0.0, 'learning_rate': 2.9599999999999995e-07, 'epoch': 0.63}
+{'loss': 0.3174, 'grad_norm': 0.0, 'learning_rate': 2.98e-07, 'epoch': 0.64}
+{'loss': 0.2876, 'grad_norm': 0.0, 'learning_rate': 3e-07, 'epoch': 0.64}
+{'loss': 0.289, 'grad_norm': 0.0, 'learning_rate': 3.02e-07, 'epoch': 0.65}
+{'loss': 0.3266, 'grad_norm': 0.0, 'learning_rate': 3.0399999999999997e-07, 'epoch': 0.65}
+{'loss': 0.3438, 'grad_norm': 0.0, 'learning_rate': 3.0599999999999996e-07, 'epoch': 0.65}
+{'loss': 0.3003, 'grad_norm': 0.0, 'learning_rate': 3.08e-07, 'epoch': 0.66}
+{'loss': 0.3256, 'grad_norm': 0.0, 'learning_rate': 3.1e-07, 'epoch': 0.66}
+{'loss': 0.2943, 'grad_norm': 0.0, 'learning_rate': 3.12e-07, 'epoch': 0.67}
+{'loss': 0.322, 'grad_norm': 0.0, 'learning_rate': 3.14e-07, 'epoch': 0.67}
+{'loss': 0.2987, 'grad_norm': 0.0, 'learning_rate': 3.1599999999999997e-07, 'epoch': 0.68}
+{'loss': 0.3169, 'grad_norm': 0.0, 'learning_rate': 3.18e-07, 'epoch': 0.68}
+{'loss': 0.3279, 'grad_norm': 0.0, 'learning_rate': 3.2e-07, 'epoch': 0.68}
+{'loss': 0.2921, 'grad_norm': 0.0, 'learning_rate': 3.22e-07, 'epoch': 0.69}
+{'loss': 0.3111, 'grad_norm': 0.0, 'learning_rate': 3.24e-07, 'epoch': 0.69}
+{'loss': 0.3026, 'grad_norm': 0.0, 'learning_rate': 3.26e-07, 'epoch': 0.7}
+{'loss': 0.3089, 'grad_norm': 0.0, 'learning_rate': 3.28e-07, 'epoch': 0.7}
+{'loss': 0.3306, 'grad_norm': 0.0, 'learning_rate': 3.3e-07, 'epoch': 0.71}
+{'loss': 0.2948, 'grad_norm': 0.0, 'learning_rate': 3.32e-07, 'epoch': 0.71}
+{'loss': 0.2978, 'grad_norm': 0.0, 'learning_rate': 3.34e-07, 'epoch': 0.71}
+{'loss': 0.3057, 'grad_norm': 0.0, 'learning_rate': 3.36e-07, 'epoch': 0.72}
+{'loss': 0.3033, 'grad_norm': 0.0, 'learning_rate': 3.38e-07, 'epoch': 0.72}
+{'loss': 0.3188, 'grad_norm': 0.0, 'learning_rate': 3.4000000000000003e-07, 'epoch': 0.73}
+{'loss': 0.2994, 'grad_norm': 0.0, 'learning_rate': 3.42e-07, 'epoch': 0.73}
+{'loss': 0.3106, 'grad_norm': 0.0, 'learning_rate': 3.4399999999999996e-07, 'epoch': 0.74}
+{'loss': 0.3136, 'grad_norm': 0.0, 'learning_rate': 3.4599999999999995e-07, 'epoch': 0.74}
+{'loss': 0.3124, 'grad_norm': 0.0, 'learning_rate': 3.4799999999999994e-07, 'epoch': 0.74}
+{'loss': 0.3131, 'grad_norm': 0.0, 'learning_rate': 3.5e-07, 'epoch': 0.75}
+{'loss': 0.3014, 'grad_norm': 0.0, 'learning_rate': 3.52e-07, 'epoch': 0.75}
+{'loss': 0.3197, 'grad_norm': 0.0, 'learning_rate': 3.5399999999999997e-07, 'epoch': 0.76}
+{'loss': 0.309, 'grad_norm': 0.0, 'learning_rate': 3.5599999999999996e-07, 'epoch': 0.76}
+{'loss': 0.2927, 'grad_norm': 0.0, 'learning_rate': 3.5799999999999995e-07, 'epoch': 0.77}
+{'loss': 0.3123, 'grad_norm': 0.0, 'learning_rate': 3.6e-07, 'epoch': 0.77}
+{'loss': 0.3011, 'grad_norm': 0.0, 'learning_rate': 3.62e-07, 'epoch': 0.77}
+{'loss': 0.3087, 'grad_norm': 0.0, 'learning_rate': 3.64e-07, 'epoch': 0.78}
+{'loss': 0.2843, 'grad_norm': 0.0, 'learning_rate': 3.6599999999999997e-07, 'epoch': 0.78}
+{'loss': 0.2904, 'grad_norm': 0.0, 'learning_rate': 3.6799999999999996e-07, 'epoch': 0.79}
+{'loss': 0.2918, 'grad_norm': 0.0, 'learning_rate': 3.7e-07, 'epoch': 0.79}
+{'loss': 0.3116, 'grad_norm': 0.0, 'learning_rate': 3.72e-07, 'epoch': 0.8}
+{'loss': 0.3221, 'grad_norm': 0.0, 'learning_rate': 3.74e-07, 'epoch': 0.8}
+{'loss': 0.2967, 'grad_norm': 0.0, 'learning_rate': 3.76e-07, 'epoch': 0.8}
+{'loss': 0.3124, 'grad_norm': 0.0, 'learning_rate': 3.7799999999999997e-07, 'epoch': 0.81}
+{'loss': 0.3121, 'grad_norm': 0.0, 'learning_rate': 3.7999999999999996e-07, 'epoch': 0.81}
+{'loss': 0.3081, 'grad_norm': 0.0, 'learning_rate': 3.82e-07, 'epoch': 0.82}
+{'loss': 0.2984, 'grad_norm': 0.0, 'learning_rate': 3.84e-07, 'epoch': 0.82}
+{'loss': 0.3177, 'grad_norm': 0.0, 'learning_rate': 3.86e-07, 'epoch': 0.83}
+{'loss': 0.313, 'grad_norm': 0.0, 'learning_rate': 3.88e-07, 'epoch': 0.83}
+{'loss': 0.2967, 'grad_norm': 0.0, 'learning_rate': 3.8999999999999997e-07, 'epoch': 0.83}
+{'loss': 0.3044, 'grad_norm': 0.0, 'learning_rate': 3.92e-07, 'epoch': 0.84}
+{'loss': 0.3119, 'grad_norm': 0.0, 'learning_rate': 3.94e-07, 'epoch': 0.84}
+{'loss': 0.328, 'grad_norm': 0.0, 'learning_rate': 3.96e-07, 'epoch': 0.85}
+{'loss': 0.3234, 'grad_norm': 0.0, 'learning_rate': 3.98e-07, 'epoch': 0.85}
+{'loss': 0.3097, 'grad_norm': 0.0, 'learning_rate': 4e-07, 'epoch': 0.86}
+{'loss': 0.3061, 'grad_norm': 0.0, 'learning_rate': 4.02e-07, 'epoch': 0.86}
+{'loss': 0.305, 'grad_norm': 0.0, 'learning_rate': 4.04e-07, 'epoch': 0.86}
+{'loss': 0.3082, 'grad_norm': 0.0, 'learning_rate': 4.06e-07, 'epoch': 0.87}
+{'loss': 0.3052, 'grad_norm': 0.0, 'learning_rate': 4.0799999999999995e-07, 'epoch': 0.87}
+{'loss': 0.3084, 'grad_norm': 0.0, 'learning_rate': 4.0999999999999994e-07, 'epoch': 0.88}
+{'loss': 0.3166, 'grad_norm': 0.0, 'learning_rate': 4.12e-07, 'epoch': 0.88}
+{'loss': 0.3146, 'grad_norm': 0.0, 'learning_rate': 4.14e-07, 'epoch': 0.89}
+{'loss': 0.3227, 'grad_norm': 0.0, 'learning_rate': 4.1599999999999997e-07, 'epoch': 0.89}
+{'loss': 0.2981, 'grad_norm': 0.0, 'learning_rate': 4.1799999999999996e-07, 'epoch': 0.89}
+{'loss': 0.3004, 'grad_norm': 0.0, 'learning_rate': 4.1999999999999995e-07, 'epoch': 0.9}
+{'loss': 0.302, 'grad_norm': 0.0, 'learning_rate': 4.2199999999999994e-07, 'epoch': 0.9}
+{'loss': 0.2953, 'grad_norm': 0.0, 'learning_rate': 4.24e-07, 'epoch': 0.91}
+{'loss': 0.3072, 'grad_norm': 0.0, 'learning_rate': 4.26e-07, 'epoch': 0.91}
+{'loss': 0.3101, 'grad_norm': 0.0, 'learning_rate': 4.2799999999999997e-07, 'epoch': 0.92}
+{'loss': 0.3167, 'grad_norm': 0.0, 'learning_rate': 4.2999999999999996e-07, 'epoch': 0.92}
+{'loss': 0.3093, 'grad_norm': 0.0, 'learning_rate': 4.3199999999999995e-07, 'epoch': 0.92}
+{'loss': 0.2929, 'grad_norm': 0.0, 'learning_rate': 4.34e-07, 'epoch': 0.93}
+{'loss': 0.3155, 'grad_norm': 0.0, 'learning_rate': 4.36e-07, 'epoch': 0.93}
+{'loss': 0.3039, 'grad_norm': 0.0, 'learning_rate': 4.38e-07, 'epoch': 0.94}
+{'loss': 0.3033, 'grad_norm': 0.0, 'learning_rate': 4.3999999999999997e-07, 'epoch': 0.94}
+{'loss': 0.2892, 'grad_norm': 0.0, 'learning_rate': 4.4199999999999996e-07, 'epoch': 0.95}
+{'loss': 0.2871, 'grad_norm': 0.0, 'learning_rate': 4.44e-07, 'epoch': 0.95}
+{'loss': 0.3071, 'grad_norm': 0.0, 'learning_rate': 4.46e-07, 'epoch': 0.95}
+{'loss': 0.3005, 'grad_norm': 0.0, 'learning_rate': 4.48e-07, 'epoch': 0.96}
+{'loss': 0.3033, 'grad_norm': 0.0, 'learning_rate': 4.5e-07, 'epoch': 0.96}
+{'loss': 0.2923, 'grad_norm': 0.0, 'learning_rate': 4.5199999999999997e-07, 'epoch': 0.97}
+{'loss': 0.3065, 'grad_norm': 0.0, 'learning_rate': 4.54e-07, 'epoch': 0.97}
+{'loss': 0.2849, 'grad_norm': 0.0, 'learning_rate': 4.56e-07, 'epoch': 0.98}
+{'loss': 0.3003, 'grad_norm': 0.0, 'learning_rate': 4.58e-07, 'epoch': 0.98}
+{'loss': 0.3197, 'grad_norm': 0.0, 'learning_rate': 4.6e-07, 'epoch': 0.98}
+{'loss': 0.3173, 'grad_norm': 0.0, 'learning_rate': 4.62e-07, 'epoch': 0.99}
+{'loss': 0.3255, 'grad_norm': 0.0, 'learning_rate': 4.64e-07, 'epoch': 0.99}
+{'loss': 0.2895, 'grad_norm': 0.0, 'learning_rate': 4.66e-07, 'epoch': 1.0}
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 82, in <module>                      | 0/42 [00:00<?, ?it/s]
+    main(args)
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 65, in main
+    trainer.train(resume_from_checkpoint=False)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2123, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2573, in _inner_training_loop
+    self._maybe_log_save_evaluate(tr_loss, grad_norm, model, trial, epoch, ignore_keys_for_eval)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3004, in _maybe_log_save_evaluate
+    metrics = self._evaluate(trial, ignore_keys_for_eval)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2958, in _evaluate
+    metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3975, in evaluate
+    output = eval_loop(
+             ^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 4169, in evaluation_loop
+    losses, logits, labels = self.prediction_step(model, inputs, prediction_loss_only, ignore_keys=ignore_keys)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 4385, in prediction_step
+    loss, outputs = self.compute_loss(model, inputs, return_outputs=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/custom_trainer.py", line 16, in compute_loss
+    result = super().compute_loss(model, inputs, return_outputs=True, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3633, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 1072, in forward
+    loss = self.loss_function(logits, labels, self.vocab_size, **loss_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/loss/loss_utils.py", line 46, in ForCausalLMLoss
+    loss = fixed_cross_entropy(shift_logits, shift_labels, num_items_in_batch, ignore_index, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/loss/loss_utils.py", line 26, in fixed_cross_entropy
+    loss = nn.functional.cross_entropy(source, target, ignore_index=ignore_index, reduction=reduction)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/functional.py", line 3479, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.64 GiB. GPU 0 has a total capacity of 47.42 GiB of which 1.11 GiB is free. Including non-PyTorch memory, this process has 46.22 GiB memory in use. Of the allocated memory 43.19 GiB is allocated by PyTorch, and 2.46 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 82, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 65, in main
+[rank0]:     trainer.train(resume_from_checkpoint=False)
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2123, in train
+[rank0]:     return inner_training_loop(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2573, in _inner_training_loop
+[rank0]:     self._maybe_log_save_evaluate(tr_loss, grad_norm, model, trial, epoch, ignore_keys_for_eval)
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3004, in _maybe_log_save_evaluate
+[rank0]:     metrics = self._evaluate(trial, ignore_keys_for_eval)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2958, in _evaluate
+[rank0]:     metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3975, in evaluate
+[rank0]:     output = eval_loop(
+[rank0]:              ^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 4169, in evaluation_loop
+[rank0]:     losses, logits, labels = self.prediction_step(model, inputs, prediction_loss_only, ignore_keys=ignore_keys)
+[rank0]:                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 4385, in prediction_step
+[rank0]:     loss, outputs = self.compute_loss(model, inputs, return_outputs=True)
+[rank0]:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/custom_trainer.py", line 16, in compute_loss
+[rank0]:     result = super().compute_loss(model, inputs, return_outputs=True, **kwargs)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3633, in compute_loss
+[rank0]:     outputs = model(**inputs)
+[rank0]:               ^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 1072, in forward
+[rank0]:     loss = self.loss_function(logits, labels, self.vocab_size, **loss_kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/loss/loss_utils.py", line 46, in ForCausalLMLoss
+[rank0]:     loss = fixed_cross_entropy(shift_logits, shift_labels, num_items_in_batch, ignore_index, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/loss/loss_utils.py", line 26, in fixed_cross_entropy
+[rank0]:     loss = nn.functional.cross_entropy(source, target, ignore_index=ignore_index, reduction=reduction)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/functional.py", line 3479, in cross_entropy
+[rank0]:     return torch._C._nn.cross_entropy_loss(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.64 GiB. GPU 0 has a total capacity of 47.42 GiB of which 1.11 GiB is free. Including non-PyTorch memory, this process has 46.22 GiB memory in use. Of the allocated memory 43.19 GiB is allocated by PyTorch, and 2.46 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

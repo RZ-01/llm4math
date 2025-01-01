@@ -1,0 +1,23 @@
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_setup.py:_flush():68] Current SDK version is 0.19.1
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_setup.py:_flush():68] Configure stats pid to 578852
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_setup.py:_flush():68] Loading settings from /home/llm4math/.config/wandb/settings
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_setup.py:_flush():68] Loading settings from /home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/settings
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_init.py:_log_setup():528] Logging user logs to /home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/run-20241221_033437-pf78gc1j/logs/debug.log
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_init.py:_log_setup():529] Logging internal logs to /home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/run-20241221_033437-pf78gc1j/logs/debug-internal.log
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_init.py:init():644] calling init triggers
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_init.py:init():650] wandb.init called with sweep_config: {}
+config: {'mode': 'train', 'model_id': 'google/gemma-2-9b', 'dataset_dir': '/home/llm4math/LLM-for-Math/data/', 'per_device_train_batch_size': 2, 'gradient_accumulation_steps': 8, 'learning_rate': 2e-06, 'weight_decay': 0.01, 'max_grad_norm': 0.3, 'num_train_epochs': 3, 'warmup_steps': 1000, 'lr_scheduler_type': 'cosine', 'max_seq_length': 1024, 'quantization_bits': 4, 'lora_r': 128, 'lora_alpha': 32, 'lora_dropout': 0.01, 'project_name': 'gemma_sft_project_lora_mistral', 'run_name': 'gemma_train_run_9b_A6000', 'output_dir': '/media/hdd/llm4math'}
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_init.py:init():680] starting backend
+2024-12-21 03:34:37,198 INFO    MainThread:578852 [wandb_init.py:init():684] sending inform_init request
+2024-12-21 03:34:37,217 INFO    MainThread:578852 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-12-21 03:34:37,218 INFO    MainThread:578852 [wandb_init.py:init():697] backend started and connected
+2024-12-21 03:34:37,220 INFO    MainThread:578852 [wandb_init.py:init():790] updated telemetry
+2024-12-21 03:34:37,241 INFO    MainThread:578852 [wandb_init.py:init():822] communicating run to backend with 90.0 second timeout
+2024-12-21 03:34:37,565 INFO    MainThread:578852 [wandb_init.py:init():874] starting run threads in backend
+2024-12-21 03:34:37,686 INFO    MainThread:578852 [wandb_run.py:_console_start():2374] atexit reg
+2024-12-21 03:34:37,686 INFO    MainThread:578852 [wandb_run.py:_redirect():2224] redirect: wrap_raw
+2024-12-21 03:34:37,687 INFO    MainThread:578852 [wandb_run.py:_redirect():2289] Wrapping output streams.
+2024-12-21 03:34:37,687 INFO    MainThread:578852 [wandb_run.py:_redirect():2314] Redirects installed.
+2024-12-21 03:34:37,688 INFO    MainThread:578852 [wandb_init.py:init():916] run started, returning control to user process
+2024-12-21 03:34:55,867 WARNING MsgRouterThr:578852 [router.py:message_loop():75] message_loop has been closed

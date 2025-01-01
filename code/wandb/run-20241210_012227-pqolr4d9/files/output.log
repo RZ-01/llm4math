@@ -1,0 +1,249 @@
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████| 8/8 [00:16<00:00,  2.11s/it]
+INFO:__main__:Tokenizer max length: 1000000000000000019884624838656
+INFO:__main__:Loading datasets...
+Tokenizing train: 100%|████████████████████████████████████████████████████████████████| 7473/7473 [00:00<00:00, 12721.76 examples/s]
+INFO:__main__:Train dataset length: 7473
+INFO:__main__:Validation dataset length: 1319
+INFO:peft.tuners.tuners_utils:Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+INFO:__main__:Trainable: 864288768 | total: 10105994752 | Percentage: 8.5522%
+/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py:100: FutureWarning: Deprecated argument(s) used in '__init__': dataset_text_field. Will not be supported from version '0.13.0'.
+
+Deprecated positional argument(s) used in SFTTrainer, please use the SFTConfig to set these arguments instead.
+  warnings.warn(message, FutureWarning)
+/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/trl/trainer/sft_trainer.py:328: UserWarning: You passed a `dataset_text_field` argument to the SFTTrainer, the value you passed will override the one in the `SFTConfig`.
+  warnings.warn(
+[2024-12-10 01:23:08,325] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -c /tmp/tmp38ikfhil/test.c -o /tmp/tmp38ikfhil/test.o
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat /tmp/tmp38ikfhil/test.o -laio -o /tmp/tmp38ikfhil/a.out
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -O2 -isystem /home/llm4math/miniconda3/envs/mathllm/include -fPIC -c /tmp/tmpdhtn33hm/test.c -o /tmp/tmpdhtn33hm/test.o
+INFO:root:gcc -pthread -B /home/llm4math/miniconda3/envs/mathllm/compiler_compat /tmp/tmpdhtn33hm/test.o -L/usr/local/cuda -L/usr/local/cuda/lib64 -lcufile -o /tmp/tmpdhtn33hm/a.out
+INFO:__main__:Starting training...
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+Traceback (most recent call last):
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 82, in <module>
+    main(args)
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 65, in main
+    trainer.train(resume_from_checkpoint=False)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2123, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2481, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3579, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3633, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1643, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1459, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/peft_model.py", line 1719, in forward
+    return self.base_model(
+           ^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 197, in forward
+    return self.model.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/accelerate/hooks.py", line 170, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 1049, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/accelerate/hooks.py", line 170, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 826, in forward
+    layer_outputs = self._gradient_checkpointing_func(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/_compile.py", line 32, in inner
+    return disable_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 632, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/utils/checkpoint.py", line 489, in checkpoint
+    return CheckpointFunction.apply(function, preserve, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/utils/checkpoint.py", line 264, in forward
+    outputs = run_function(*args)
+              ^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/accelerate/hooks.py", line 170, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 553, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+                                                          ^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/accelerate/hooks.py", line 170, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 220, in forward
+    query_states = self.q_proj(hidden_states)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/bnb.py", line 536, in forward
+    result = result + output
+    ^^^^^^
+KeyboardInterrupt
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 82, in <module>
+[rank3]:     main(args)
+[rank3]:   File "/home/llm4math/LLM-for-Math/Direct Verifier/code/train.py", line 65, in main
+[rank3]:     trainer.train(resume_from_checkpoint=False)
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2123, in train
+[rank3]:     return inner_training_loop(
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 2481, in _inner_training_loop
+[rank3]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+[rank3]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3579, in training_step
+[rank3]:     loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/trainer.py", line 3633, in compute_loss
+[rank3]:     outputs = model(**inputs)
+[rank3]:               ^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1643, in forward
+[rank3]:     else self._run_ddp_forward(*inputs, **kwargs)
+[rank3]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1459, in _run_ddp_forward
+[rank3]:     return self.module(*inputs, **kwargs)  # type: ignore[index]
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/peft_model.py", line 1719, in forward
+[rank3]:     return self.base_model(
+[rank3]:            ^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 197, in forward
+[rank3]:     return self.model.forward(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/accelerate/hooks.py", line 170, in new_forward
+[rank3]:     output = module._old_forward(*args, **kwargs)
+[rank3]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 1049, in forward
+[rank3]:     outputs = self.model(
+[rank3]:               ^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/accelerate/hooks.py", line 170, in new_forward
+[rank3]:     output = module._old_forward(*args, **kwargs)
+[rank3]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 826, in forward
+[rank3]:     layer_outputs = self._gradient_checkpointing_func(
+[rank3]:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/_compile.py", line 32, in inner
+[rank3]:     return disable_fn(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 632, in _fn
+[rank3]:     return fn(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/utils/checkpoint.py", line 489, in checkpoint
+[rank3]:     return CheckpointFunction.apply(function, preserve, *args)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/autograd/function.py", line 575, in apply
+[rank3]:     return super().apply(*args, **kwargs)  # type: ignore[misc]
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/utils/checkpoint.py", line 264, in forward
+[rank3]:     outputs = run_function(*args)
+[rank3]:               ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/accelerate/hooks.py", line 170, in new_forward
+[rank3]:     output = module._old_forward(*args, **kwargs)
+[rank3]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 553, in forward
+[rank3]:     hidden_states, self_attn_weights, present_key_value = self.self_attn(
+[rank3]:                                                           ^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/accelerate/hooks.py", line 170, in new_forward
+[rank3]:     output = module._old_forward(*args, **kwargs)
+[rank3]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py", line 220, in forward
+[rank3]:     query_states = self.q_proj(hidden_states)
+[rank3]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.12/site-packages/peft/tuners/lora/bnb.py", line 536, in forward
+[rank3]:     result = result + output
+[rank3]:     ^^^^^^
+[rank3]: KeyboardInterrupt

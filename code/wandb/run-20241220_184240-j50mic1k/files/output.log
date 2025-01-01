@@ -1,0 +1,78 @@
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:15<00:00,  1.94s/it]
+INFO:__main__:Tokenizer max length: 1000000000000000019884624838656
+INFO:__main__:Loading datasets...
+Generating train split: 506 examples [00:00, 4198.15 examples/s]
+Traceback (most recent call last):
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.8/site-packages/datasets/builder.py", line 1870, in _prepare_split_single
+    writer.write_table(table)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.8/site-packages/datasets/arrow_writer.py", line 622, in write_table
+    pa_table = table_cast(pa_table, self._schema)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.8/site-packages/datasets/table.py", line 2292, in table_cast
+    return cast_table_to_schema(table, schema)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.8/site-packages/datasets/table.py", line 2240, in cast_table_to_schema
+    raise CastError(
+datasets.table.CastError: Couldn't cast
+index: int64
+question: string
+final_answer: string
+Step 1: string
+Step 2: string
+Step 3: string
+Step 4: string
+verification_results: list<item: struct<index: int64, step: int64, prompt: string, model_output: string, verification: string>>
+  child 0, item: struct<index: int64, step: int64, prompt: string, model_output: string, verification: string>
+      child 0, index: int64
+      child 1, step: int64
+      child 2, prompt: string
+      child 3, model_output: string
+      child 4, verification: string
+Step 5: string
+Step 6: string
+Step 7: string
+Step 8: string
+Step 9: string
+Step 10: string
+Step 11: string
+Step 12: string
+Step 13: string
+Step 14: string
+Step 15: string
+Step 16: string
+Step 17: string
+Step 18: string
+Step 19: string
+Step 20: string
+Step 21: string
+Step 22: string
+to
+{'index': Value(dtype='int64', id=None), 'question': Value(dtype='string', id=None), 'final_answer': Value(dtype='string', id=None), 'Step 1': Value(dtype='string', id=None), 'Step 2': Value(dtype='string', id=None), 'Step 3': Value(dtype='string', id=None), 'Step 4': Value(dtype='string', id=None), 'Step 5': Value(dtype='string', id=None), 'Step 6': Value(dtype='string', id=None), 'verification_results': [{'index': Value(dtype='int64', id=None), 'step': Value(dtype='int64', id=None), 'prompt': Value(dtype='string', id=None), 'model_output': Value(dtype='string', id=None), 'verification': Value(dtype='string', id=None)}], 'Step 7': Value(dtype='string', id=None), 'Step 8': Value(dtype='string', id=None), 'Step 9': Value(dtype='string', id=None), 'Step 10': Value(dtype='string', id=None), 'Step 11': Value(dtype='string', id=None), 'Step 12': Value(dtype='string', id=None), 'Step 13': Value(dtype='string', id=None), 'Step 14': Value(dtype='string', id=None), 'Step 15': Value(dtype='string', id=None), 'Step 16': Value(dtype='string', id=None), 'Step 17': Value(dtype='string', id=None), 'Step 18': Value(dtype='string', id=None), 'Step 19': Value(dtype='string', id=None), 'Step 20': Value(dtype='string', id=None)}
+because column names don't match
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "train.py", line 82, in <module>
+    main(args)
+  File "train.py", line 37, in main
+    train_dataset, val_dataset = load_train_val_datasets(
+  File "/home/llm4math/LLM-for-Math/Direct Verifier/code/data/dataset_loader.py", line 45, in load_train_val_datasets
+    verify_dataset_raw = load_dataset("json", data_files=file_path)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.8/site-packages/datasets/load.py", line 2154, in load_dataset
+    builder_instance.download_and_prepare(
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.8/site-packages/datasets/builder.py", line 924, in download_and_prepare
+    self._download_and_prepare(
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.8/site-packages/datasets/builder.py", line 1000, in _download_and_prepare
+    self._prepare_split(split_generator, **prepare_split_kwargs)
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.8/site-packages/datasets/builder.py", line 1741, in _prepare_split
+    for job_id, done, content in self._prepare_split_single(
+  File "/home/llm4math/miniconda3/envs/mathllm/lib/python3.8/site-packages/datasets/builder.py", line 1872, in _prepare_split_single
+    raise DatasetGenerationCastError.from_cast_error(
+datasets.exceptions.DatasetGenerationCastError: An error occurred while generating the dataset
+
+All the data files must have the same columns, but at some point there are 2 new columns ({'Step 21', 'Step 22'})
+
+This happened while the json dataset builder was generating data using
+
+/home/llm4math/LLM-for-Math/data/verification_results_MATH_selected_Mistral_Large.jsonl
+
+Please either edit the data files to have matching columns, or separate them into different configurations (see docs at https://hf.co/docs/hub/datasets-manual-configuration#multiple-configurations)
