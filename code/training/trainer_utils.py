@@ -19,7 +19,7 @@ def build_training_args(args):
         logging_steps=1,
         save_strategy="steps",
         save_steps=1000,
-        eval_strategy="epoch",
+    #    eval_strategy="epoch",
         save_total_limit=2,
         report_to="wandb",
         max_seq_length=args.max_seq_length,
