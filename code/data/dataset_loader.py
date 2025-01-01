@@ -44,7 +44,7 @@ def rename_key(filepath, old_key="model_output", new_key="completion"):
             if old_key in data:
                 data[new_key] = data.pop(old_key)
 
-        with open("~/Hera/LLM-for-Math/data/verification_results_MATH_Mistral_L_input.jsonl", 'w', encoding='utf-8') as f:
+        with open("../../data/verification_results_MATH_Mistral_L_input.jsonl", 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
 
     except FileNotFoundError:
@@ -55,7 +55,7 @@ def rename_key(filepath, old_key="model_output", new_key="completion"):
         print(f"An unexpected error occurred: {e}")
 
 # 使用示例
-filepath = "~/Hera/LLM-for-Math/data/verification_results_MATH_Mistral_L_flattened.jsonl"  
+filepath = "../../data/verification_results_MATH_Mistral_L_flattened.jsonl"  
 rename_key(filepath)
 
 """
