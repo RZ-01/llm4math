@@ -2,33 +2,30 @@
 import os,json
 from datasets import load_dataset, Dataset
 def load_train_val_datasets(dataset_dir, tokenizer, generate_prompt_fn):
-    file = "verification_results_MATH_Mistral_L_flattened.jsonl"
+    file = "verification_results_MATH_Mistral_L_input.jsonl"
     file_path = os.path.join(dataset_dir, file)
     dataset = load_dataset('json', data_files=file_path, split='train')
     # Split into train and eval
     verify_dataset_split = dataset.train_test_split(test_size=0.1, seed=42)
     verify_data = verify_dataset_split['train']
     eval_data = verify_dataset_split['test']
-    
     # Function to generate prompts and tokenize
-    def prepare_dataset(dataset, split_name):
+    #def prepare_dataset(dataset, split_name):
         # Generate prompts
-        prompts = [generate_prompt_fn(data_point) for data_point in dataset]
-        dataset = dataset.add_column("prompts", prompts)
-        
+    #    prompts = [generate_prompt_fn(data_point) for data_point in dataset]
+    #    dataset = dataset.add_column("prompts", prompts)x
         # Tokenize prompts
-        dataset = dataset.map(
-            lambda samples: tokenizer(samples["prompts"], padding=True, truncation=True),
-            batched=True,
-            desc=f"Tokenizing {split_name}"
-        )
-        return dataset
+    #    dataset = dataset.map(
+    #        lambda samples: tokenizer(samples["prompts"], padding=True, truncation=True),
+    #        batched=True,
+    #        desc=f"Tokenizing {split_name}"
+    #    )
+    #    return dataset
 
-    verify_data = prepare_dataset(verify_data, "train")
-    eval_data = prepare_dataset(eval_data, "validation")
-
+    #verify_data = prepare_dataset(verify_data, "train")
+    #eval_data = prepare_dataset(eval_data, "validation")
     return verify_data, eval_data
-
+"""
 import json
 
 def rename_key(filepath, old_key="model_output", new_key="completion"):
@@ -57,7 +54,7 @@ def rename_key(filepath, old_key="model_output", new_key="completion"):
 # 使用示例
 filepath = "../../../data/verification_results_MATH_Mistral_L_flattened.jsonl"  
 rename_key(filepath)
-
+"""
 """
     # Generation Dataset
     gsm8k_dataset = load_dataset("openai/gsm8k",'main', split="train")
