@@ -8,7 +8,7 @@ def parse_args():
     # 训练模式参数
     train_parser = subparsers.add_parser("train", help="Training mode")
     # Model and data
-    train_parser.add_argument("--model_id", type=str, default="google/gemma-2-9b", help="Pretrained model ID.")
+    train_parser.add_argument("--model_id", type=str, default="google/gemma-2-9b-it", help="Pretrained model ID.")
     train_parser.add_argument("--dataset_dir", type=str, default="../extracted/", help="Directory with dataset files.")
 
     # Training hyperparameters
