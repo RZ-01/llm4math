@@ -1,8 +1,0 @@
-{"time":"2024-12-20T21:52:28.29263957-08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
-{"time":"2024-12-20T21:52:28.29265908-08:00","level":"INFO","msg":"created symlink","path":"/home/llm4math/LLM-for-Math/Direct Verifier/code/wandb/run-20241220_215228-tws82l2f/logs/debug-core.log"}
-{"time":"2024-12-20T21:52:28.402604899-08:00","level":"INFO","msg":"created new stream","id":"tws82l2f"}
-{"time":"2024-12-20T21:52:28.402649768-08:00","level":"INFO","msg":"stream: started","id":"tws82l2f"}
-{"time":"2024-12-20T21:52:28.402684207-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"tws82l2f"}
-{"time":"2024-12-20T21:52:28.402709927-08:00","level":"INFO","msg":"sender: started","stream_id":"tws82l2f"}
-{"time":"2024-12-20T21:52:28.402690317-08:00","level":"INFO","msg":"handler: started","stream_id":"tws82l2f"}
-{"time":"2024-12-20T21:52:28.653506153-08:00","level":"INFO","msg":"Starting system monitor"}
