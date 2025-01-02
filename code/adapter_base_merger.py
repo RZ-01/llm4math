@@ -2,10 +2,8 @@ from peft import PeftConfig, PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import os
 
-path_with_tilde = "~/.cache/huggingface/hub/gemma-2-9b-it"
-expanded_path = os.path.expanduser(path_with_tilde)
 
-base_model_name = expanded_path
+base_model_name = "google/gemma-2-9b-it"
 adapter_model_name = "./results/final_model"
 
 model = AutoModelForCausalLM.from_pretrained(base_model_name)
