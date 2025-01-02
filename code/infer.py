@@ -23,8 +23,10 @@ def load_model_and_tokenizer(model_path, device):
 
 
 def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=350, batch_size=2):
-    inputs = tokenizer(prompt, return_tensors="pt").to(device)
+    inputs = tokenizer(prompt, return_tensors="pt", truncation=True)
+    inputs = {k: v.to(device) for k, v in inputs.items()}
 
+                
     outputs = model.generate(
         **inputs,
         max_length=max_length,               
@@ -63,25 +65,43 @@ def perform_inference_score_only(model, tokenizer, prompt, device, num_votes=7, 
     输出：
       - score only
     """
-    inputs = tokenizer(prompt, return_tensors="pt").to(device)
-    outputs = model.generate(
-        **inputs,
-        max_length=max_length,
-        num_return_sequences=num_votes,
-        do_sample=True,
-        top_k=32,
-        temperature=0.7,
-        eos_token_id=tokenizer.eos_token_id
-    )
-    generated_texts = [tokenizer.decode(output, skip_special_tokens=True) for output in outputs]
-    scores = []
-    for text in generated_texts:
-        score = compute_yes_no_probability(text, tokenizer, model)
-        scores.append(score)
+    inputs = tokenizer(prompt, return_tensors="pt", truncation=True)
+    inputs = {k: v.to(device) for k, v in inputs.items()}
+    paths=[]
+    for _ in range(num_votes):
+            try:
+                outputs = model.generate(
+                    **inputs,
+                    max_length=max_length,
+                    do_sample=True,
+                    temperature=0.7,
+                    num_beams=4,
+                    top_p=0.95,
+                    no_repeat_ngram_size=3,
+                    num_return_sequences=1
+                )
+                
+                decoded = tokenizer.decode(outputs[0], skip_special_tokens=True)
+                generated_text = decoded[len(prompt):]              
+                paths.append(generated_text.strip())
+                
+            except Exception as e:
+                print(f"Error in generation: {str(e)}")
+                paths.append("")
+    
+    print(paths)
 
-    if not scores:
-        raise ValueError("All generated texts failed to extract scores.")
-    average_score = sum(scores) / len(scores)
+    transition_scores = model.compute_transition_scores(
+        outputs.sequences, outputs.scores, normalize_logits=True)
+    input_length = 1 if model.config.is_encoder_decoder else inputs.input_ids.shape[1]
+    generated_tokens = outputs.sequences[:, input_length:]
+    for tok, score in zip(generated_tokens[0], transition_scores[0]):
+        # | token | token string | log probability | probability
+        score_cpu = score.cpu()
+        print(f"| {tok.item():5d} | {tokenizer.decode(tok):8s} | {score_cpu.numpy():.3f} | {np.exp(score_cpu.numpy()):.2%}")
+            
+
+    average_score = 0
     return average_score
 def get_inference_score(model_path, question, solution, num_votes=1, max_length=350):
     """

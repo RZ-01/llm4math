@@ -27,8 +27,6 @@ def generate_prompt(data_point):
 
     return prompt
 
-    import re
-
 def compute_yes_no_probability(text, tokenizer, model):
     """
     计算给定文本中最后一个与 'Verification: Is the answer correct (Yes/No)?' 匹配的 'Yes' 或 'No' 的概率比例。
