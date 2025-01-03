@@ -23,7 +23,7 @@ def load_model_and_tokenizer(model_path, device):
     return model, tokenizer
 
 
-def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=512, batch_size=2):
+def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=4096, batch_size=2):
     inputs = tokenizer(prompt, return_tensors="pt", truncation=True)
     inputs = {k: v.to(device) for k, v in inputs.items()}
     all_outputs = []
