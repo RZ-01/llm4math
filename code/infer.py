@@ -68,6 +68,7 @@ def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=
                 if regeneration_attempts == max_regeneration_attempts:
                     all_generated_texts.append("")
                     all_transition_scores.append(None)
+                    all_outputs.append(None)
                 break 
 
         if regeneration_attempts == max_regeneration_attempts and not all_generated_texts:
