@@ -12,6 +12,7 @@ def extract_final_grade(text):
 
 
 def generate_prompt(data_point):
+    """
     prompt_template = (
         "You are a math teacher.\n Verify the question and answer. If the answer is incorrect, output your expected answer."
         "At the end of your verification, respond in the form \"Verification: Is the answer correct? X\", where X is Yes or No \n"
@@ -22,6 +23,16 @@ def generate_prompt(data_point):
     # 填充模板中的Few-Shot示例、问题和解决方案
     prompt = prompt_template.format(
         question=data_point.get("question", "No question provided."),
+        solution=data_point.get("solution", "No solution provided.")
+    )
+    """
+    prompt_template = (
+        "Question:{question}\n Context:{context} \n"
+        "You are a math teacher. Verify this step: {solution} \n"
+        "If you think this step is incorrect, respond \"Verification: Is the answer correct? No\" If you think this step is correct, respond \"Verification: Is the answer correct? Yes\""    )
+    prompt = prompt_template.format(
+        question=data_point.get("question", "No question provided."),
+        context=data_point.get("context", "No context provided."),
         solution=data_point.get("solution", "No solution provided.")
     )
 
