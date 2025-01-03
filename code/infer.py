@@ -39,12 +39,10 @@ def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=
                 outputs = model.generate(
                     **inputs,
                     max_length=max_length,
-                    do_sample=True,
-                    temperature=0.7,
-                    num_beams=4,
-                    top_p=0.95,
-                    no_repeat_ngram_size=3,
                     num_return_sequences=1,
+                    do_sample=True,
+                    temperature=1.0,
+                    eos_token_id=tokenizer.eos_token_id,
                     output_scores=True,
                     return_dict_in_generate=True
                 )
