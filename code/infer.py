@@ -33,6 +33,9 @@ def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=
     max_regeneration_attempts = 5
 
     for _ in range(num_votes):
+        outputs = None
+        transition_scores = None
+        generated_text = ""
         regeneration_attempts = 0
         while regeneration_attempts < max_regeneration_attempts:
             try:
@@ -50,14 +53,11 @@ def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=
                 decoded = tokenizer.decode(outputs.sequences[0], skip_special_tokens=True)
                 generated_text = decoded[len(prompt):].strip()
 
-                if generated_text:  
+                if generated_text:
                     transition_scores = model.compute_transition_scores(
                         outputs.sequences, outputs.scores, normalize_logits=True
                     )
-                    all_outputs.append(outputs)
-                    all_generated_texts.append(generated_text)
-                    all_transition_scores.append(transition_scores)
-                    break  
+                    break
                 else:
                     regeneration_attempts += 1
                     print(f"Generated empty text, regenerating attempt {regeneration_attempts}/{max_regeneration_attempts}")
@@ -65,24 +65,17 @@ def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=
             except Exception as e:
                 print(f"Error in generation: {str(e)}")
                 regeneration_attempts += 1
-                if regeneration_attempts == max_regeneration_attempts:
-                    all_generated_texts.append("")
-                    all_transition_scores.append(None)
-                    all_outputs.append(None)
-                break 
+                break
 
-        if regeneration_attempts == max_regeneration_attempts and not all_generated_texts:
-            all_generated_texts.append("")
-            all_transition_scores.append(None)
-        elif regeneration_attempts == max_regeneration_attempts and len(all_generated_texts) <= _: # Handle case where some regenerations failed
-            all_generated_texts.append("")
-            all_transition_scores.append(None)
+        all_outputs.append(outputs)
+        all_generated_texts.append(generated_text)
+        all_transition_scores.append(transition_scores)
 
     yes_scores = []
     no_scores = []
 
-    for i, text in enumerate(all_generated_texts):
-        if all_transition_scores[i] is not None:
+    for i in enumerate(all_generated_texts):
+        if all_transition_scores[i] is not None and all_outputs[i] is not None:
             input_length = 1 if model.config.is_encoder_decoder else inputs["input_ids"].shape[1]
             generated_tokens = all_outputs[i].sequences[:, input_length:]
             for tok, score in zip(generated_tokens[0], all_transition_scores[i][0]):
