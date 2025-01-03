@@ -156,9 +156,7 @@ def main(args):
     inference_results = []
 
     for sample in tqdm(test_samples, desc="Inference"):
-        question = sample.get("question")
-        solution = sample.get("solution")
-        prompt = generate_prompt({"question": question, "solution": solution})
+        prompt = generate_prompt(sample)
 
         average_score, generated_texts = perform_inference(
             model=model,
@@ -170,8 +168,8 @@ def main(args):
         )
 
         inference_results.append({
-            "question": question,
-            "solution": solution,
+            "question": sample["question"],
+            "solution": sample["solution"],
             "average_score": average_score,
             "generated_texts": generated_texts
         })
