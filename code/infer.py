@@ -74,7 +74,7 @@ def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=
     yes_scores = []
     no_scores = []
 
-    for i in enumerate(all_generated_texts):
+    for i, text in enumerate(all_generated_texts):
         if all_transition_scores[i] is not None and all_outputs[i] is not None:
             input_length = 1 if model.config.is_encoder_decoder else inputs["input_ids"].shape[1]
             generated_tokens = all_outputs[i].sequences[:, input_length:]
