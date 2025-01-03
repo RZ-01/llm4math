@@ -82,7 +82,7 @@ def perform_inference(model, tokenizer, prompt, device, num_votes=1, max_length=
 
     for i, text in enumerate(all_generated_texts):
         if all_transition_scores[i] is not None:
-            input_length = 1 if model.config.is_encoder_decoder else inputs.input_ids.shape[1]
+            input_length = 1 if model.config.is_encoder_decoder else inputs["input_ids"].shape[1]
             generated_tokens = all_outputs[i].sequences[:, input_length:]
             for tok, score in zip(generated_tokens[0], all_transition_scores[i][0]):
                 decoded_token = tokenizer.decode(tok)
