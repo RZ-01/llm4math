@@ -6,6 +6,7 @@ from custom_trainer import CustomSFTTrainer
 def build_training_args(args):
     return SFTConfig(
         output_dir=args.output_dir,
+        use_liger=True,
         per_device_train_batch_size=args.per_device_train_batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
         learning_rate=args.learning_rate,
@@ -24,6 +25,7 @@ def build_training_args(args):
         report_to="wandb",
         max_seq_length=args.max_seq_length,
         gradient_checkpointing=True,
+        gradient_checkpointing_kwargs={'use_reentrant':False},
         ddp_find_unused_parameters=False
     )
 
