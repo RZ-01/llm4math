@@ -267,7 +267,7 @@ def main(args):
                 "question": sample["question"],
                 "solution": sample["solution"],
                 "context": sample["context"],
-                "average_score": average_score,
+                "average_score": float(average_score),
                 "Majority Vote": result
             }
 
