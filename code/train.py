@@ -35,9 +35,7 @@ def main(args):
     # Load datasets
     logger.info("Loading datasets...")
     train_dataset, val_dataset = load_train_val_datasets(
-        dataset_dir=args.dataset_dir,
-        tokenizer=tokenizer,
-        generate_prompt_fn=generate_prompt
+        dataset_dir=args.dataset_dir
     )
 
     logger.info(f"Train dataset length: {len(train_dataset)}")

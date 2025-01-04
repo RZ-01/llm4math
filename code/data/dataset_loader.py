@@ -1,7 +1,7 @@
 # code/data/dataset_loader.py
 import os,json
-from datasets import load_dataset, Dataset
-def load_train_val_datasets(dataset_dir, tokenizer, generate_prompt_fn):
+from datasets import load_dataset
+def load_train_val_datasets(dataset_dir):
     file = "verification_results_MATH_Mistral_L_input.jsonl"
     file_path = os.path.join(dataset_dir, file)
     dataset = load_dataset('json', data_files=file_path, split='train')
