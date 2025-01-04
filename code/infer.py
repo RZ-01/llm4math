@@ -250,30 +250,31 @@ def main(args):
 
     inference_results = []
 
-    for sample in tqdm(test_samples, desc="Inference"):
-        prompt = generate_prompt(sample)
-
-        result, average_score = perform_inference(
-            model=model,
-            tokenizer=tokenizer,
-            prompt=prompt,
-            device=device,
-            num_votes=args.num_votes,
-            batch_size=args.batch_size
-        )
-
-        inference_results.append({
-            "question": sample["question"],
-            "solution": sample["solution"],
-            "context":sample["context"],
-            "average_score": average_score,
-            "Majority Vote": result
-        })
-
-    logger.info(f"Saving inference results to {args.output_path}")
     with open(args.output_path, 'w', encoding='utf-8') as f:
-        for result in inference_results:
-            f.write(json.dumps(result, ensure_ascii=False) + "\n")
+        for sample in tqdm(test_samples, desc="Inference"):
+            prompt = generate_prompt(sample)
+
+            result, average_score = perform_inference(
+                model=model,
+                tokenizer=tokenizer,
+                prompt=prompt,
+                device=device,
+                num_votes=args.num_votes,
+                batch_size=args.batch_size
+            )
+
+            inference_result = {
+                "question": sample["question"],
+                "solution": sample["solution"],
+                "context": sample["context"],
+                "average_score": average_score,
+                "Majority Vote": result
+            }
+
+            f.write(json.dumps(inference_result, ensure_ascii=False) + "\n")
+
+    logger.info(f"Saved inference results to {args.output_path}")
+
 
     wandb.finish()
 
