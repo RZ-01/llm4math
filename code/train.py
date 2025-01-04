@@ -1,7 +1,7 @@
 # code/train.py
 import os
 import logging
-import wandb
+import wandb, torch
 from accelerate import PartialState
 
 from data.dataset_loader import load_train_val_datasets
@@ -68,6 +68,13 @@ def main(args):
     final_model_path = os.path.join(args.output_dir, "final_model")
     trainer.save_model(final_model_path)
     logger.info(f"Model saved to {final_model_path}")
+
+    if torch.cuda.is_available():
+        logger.info("Clearing CUDA cache before evaluation...")
+        torch.cuda.empty_cache()
+        logger.info("CUDA cache cleared.")
+    else:
+        logger.info("CUDA is not available, skipping memory clearing.")
 
     # Evaluate
     results = trainer.evaluate()

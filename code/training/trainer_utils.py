@@ -11,7 +11,7 @@ def build_training_args(args):
         learning_rate=args.learning_rate,
         weight_decay=args.weight_decay,
         max_grad_norm=args.max_grad_norm,
-        num_train_epochs=args.num_train_epochs,
+        max_steps=args.num_train_steps,
         warmup_steps=args.warmup_steps,
         lr_scheduler_type=args.lr_scheduler_type,
         logging_dir='./logs',

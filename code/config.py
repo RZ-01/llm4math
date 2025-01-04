@@ -16,8 +16,8 @@ def parse_args():
     train_parser.add_argument("--gradient_accumulation_steps", type=int, default=8)
     train_parser.add_argument("--learning_rate", type=float, default=2e-6)
     train_parser.add_argument("--weight_decay", type=float, default=1e-2)
-    train_parser.add_argument("--max_grad_norm", type=float, default=0.3)
-    train_parser.add_argument("--num_train_epochs", type=int, default=3)
+    train_parser.add_argument("--max_grad_norm", type=float, default=1.0)
+    train_parser.add_argument("--num_train_steps", type=int, default=100000)
     train_parser.add_argument("--warmup_steps", type=int, default=1000)
     train_parser.add_argument("--lr_scheduler_type", type=str, default="cosine")
     train_parser.add_argument("--max_seq_length", type=int, default=512) #1024
