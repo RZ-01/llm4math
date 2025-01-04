@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 def main(args):
 
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3,4,5,6"
     device_string = PartialState().process_index
     logger.info(f"Using device string: {device_string}")
 

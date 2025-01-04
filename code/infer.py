@@ -1,7 +1,7 @@
 # code/inference/infer.py
 import json
 import wandb
-import logging
+import logging, os
 from tqdm import tqdm
 
 import numpy as np
@@ -226,7 +226,7 @@ def get_inference_score(model_path, question, solution, num_votes=1, max_length=
     return score
 
 def main(args):
-
+    os.environ["CUDA_VISIBLE_DEVICES"] = "7"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     logger.info(f"Using device: {device}")
 
