@@ -1,7 +1,5 @@
 # code/train.py
 import os
-
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3,4,5,6"
 import logging
 import wandb, torch
 from accelerate import PartialState
